@@ -1,0 +1,14 @@
+version: '1.0'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./mysql/mysql-data:/var/lib/mysql
+      - ./mysql/mysql-conf:/etc/mysql/conf.d
+    ports:
+      - "3306:3306"
