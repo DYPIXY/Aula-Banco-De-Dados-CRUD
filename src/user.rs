@@ -2,7 +2,7 @@ pub mod user
 {
     pub fn createUser(req_body: String)
     {
-        let jsonParsed = json::parse(req_body).unwrap();
+        let jsonParsed = json::parse(&req_body).unwrap();
 
         //response body
         HttpResponse::Ok().body("user");

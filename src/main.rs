@@ -1,47 +1,54 @@
-use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
-pub use user;
+use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder, Json};
+mod user;
+mod notes;
 
 #[post("/user/create")]
 async fn createUser(req_body: String) -> impl Responder 
 {
-    user::createUser(req_body);
+    createUser(req_body);
+    HttpResponse::Ok().body("User created");
 }
 
 #[post("/user/update")]
 async fn updateUserByPk() -> impl Responder 
 {
-    user::updateUserByPk();
+    updateUserByPk();
     HttpResponse::Ok().body("user");
 }
 
 #[get("/user/retrieve")]
 async fn retrieveUserByPk() -> impl Responder 
 {
-    user::retrieveUserByPk();
+    retrieveUserByPk();
+    HttpResponse::Ok().body("user");
 }
 
 #[post("/notes/create")]
 async fn createNote() -> impl Responder 
 {
-    HttpResponse::Ok().body("user")
+    createNote();
+    HttpResponse::Ok().body("user");
 }
 
 #[post("/notes/read")]
 async fn readNote() -> impl Responder 
 {
-    HttpResponse::Ok().body("user")
+    readNote();
+    HttpResponse::Ok().body("user");
 }
 
 #[post("/notes/update")]
 async fn updateNote() -> impl Responder 
 {
-    HttpResponse::Ok().body("user")
+    updateNote();
+    HttpResponse::Ok().body("user");
 }
 
 #[post("/notes/delete")]
 async fn deleteNote() -> impl Responder 
 {
-    HttpResponse::Ok().body("user")
+    deleteNote();
+    HttpResponse::Ok().body("user");
 }
 
 //main 
