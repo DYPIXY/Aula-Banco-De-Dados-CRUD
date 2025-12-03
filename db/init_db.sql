@@ -1,10 +1,16 @@
+-- cria o usuario da API
+CREATE USER 'usuario'@'%' IDENTIFIED BY 'aula';
+GRANT ALL ON *.* TO 'usuario'@'%';
+FLUSH PRIVILEGES;
+
+
 create table user(
 	id int not null primary key auto_increment,
 	nome varchar(255) not null,
-	email varchar(320) not null unique,
+	email varchar(320),
 	created_at datetime default now(),
 	updated_at datetime default now() on update now(),
-	deleted_at datetime,
+	deleted_at datetime
 );
 
 create table passwords(
@@ -18,7 +24,7 @@ create table note_type
 (
 	id int not null primary key
 	,tipo varchar(64) not null
-	,definitions json
+	,definitons json
 );
 
 create table notes(
@@ -36,7 +42,7 @@ create table notes(
 
 -- insert pra popular um mockup
 
-insert into note_type(id, tipo, definitions)
+insert into note_type(id, tipo, definitons)
 values
 (1, 'Urgente', '{"color":"yellow", "text":"bold"}'),
 (2, 'Normal', null),
@@ -51,4 +57,7 @@ insert into passwords(user_id, password, salt)
 values(1, '1c29b697e5a2ca8f1d092097a4a3f0017d3d54e21064e69d191f07aa1807b174', '12345678');
 
 insert into notes(id, texto, user_id, tipo_id)
-values(1, 'teste', 1, 1);
+values(1, 'teste urgente', 1, 1)
+,(2, 'teste normal', 1, 2)
+,(3, 'teste teste temporaria', 1, 3);
+
