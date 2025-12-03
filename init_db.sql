@@ -1,9 +1,16 @@
-drop table user, passwords, note_type, notes;
+-- cria o usuario da API
+CREATE USER 'usuario'@'%' IDENTIFIED BY 'aula';
+GRANT ALL ON *.* TO 'usuario'@'%';
+FLUSH PRIVILEGES;
+
 
 create table user(
 	id int not null primary key auto_increment,
 	nome varchar(255) not null,
-	email varchar(320)
+	email varchar(320) not null unique,
+	created_at datetime default current_timestamp,
+	updated_at datetime default current_timestamp on update current_timestamp,
+	deleted_at datetime,
 );
 
 create table passwords(
@@ -25,22 +32,29 @@ create table notes(
 	texto text,
 	user_id int not null,
 	tipo_id int,
+	expira_em datetime,
+	created_at datetime default current_timestamp,
+	updated_at datetime default current_timestamp on update current_timestamp,
+	deleted_at datetime,
 	foreign key(user_id) references user(id),
 	foreign key(tipo_id) references note_type(id)
 );
 
-## insert pra popular um mockup
+-- insert pra popular um mockup
 
 insert into note_type(id, tipo, definitons)
 values
 (1, 'Urgente', '{"color":"yellow", "text":"bold"}'),
 (2, 'Normal', null),
-(3, 'Temporária', '{"expires":"2025-12-25"}');
+(3, 'Temporária', '{"color":"orange"}');
 
 insert into user(id, nome, email)
 values(1, 'usuario_teste', 'usuario.teste@teste.com');
 
-#senha = teste
-#salt =
+-- senha = teste
+-- salt = 12345678
 insert into passwords(user_id, password, salt)
 values(1, '1c29b697e5a2ca8f1d092097a4a3f0017d3d54e21064e69d191f07aa1807b174', '12345678');
+
+insert into notes(id, texto, user_id, tipo_id)
+values(1, 'teste', 1, 1);

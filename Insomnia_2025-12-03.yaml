@@ -1,0 +1,374 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Faculdade
+meta:
+  id: wrk_bef6c2d64e7e4ef388be31ae50d409aa
+  created: 1755730983221
+  modified: 1764551601807
+  description: ""
+collection:
+  - name: Sistemas_Distribuídos
+    meta:
+      id: fld_18a843eb1119421699160d6072a8883b
+      created: 1764551595756
+      modified: 1764551763514
+      sortKey: -1764551595756
+      description: ""
+    children:
+      - url: https://t9vzg4aqc2.execute-api.us-east-1.amazonaws.com/production/task
+        name: CRUD Get
+        meta:
+          id: req_c2f9553eb71e447daab79c86f720afd7
+          created: 1764551755215
+          modified: 1764558985119
+          isPrivate: false
+          description: ""
+          sortKey: -1764551757636
+        method: GET
+        parameters:
+          - name: id
+            value: "1"
+            description: ""
+            disabled: true
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://t9vzg4aqc2.execute-api.us-east-1.amazonaws.com/production/task
+        name: CRUD Delete
+        meta:
+          id: req_9c7265faf231451bb83f4631fb4c4b72
+          created: 1764551764494
+          modified: 1764551947208
+          isPrivate: false
+          description: ""
+          sortKey: -1764551757736
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://t9vzg4aqc2.execute-api.us-east-1.amazonaws.com/production/task
+        name: CRUD Put
+        meta:
+          id: req_04b0d5f260e445ecb085012098dca3e0
+          created: 1764551767733
+          modified: 1764551950460
+          isPrivate: false
+          description: ""
+          sortKey: -1764551757836
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://t9vzg4aqc2.execute-api.us-east-1.amazonaws.com/production/task
+        name: CRUD Post
+        meta:
+          id: req_5a17f43d58944cc8911b11c928fc4b7d
+          created: 1764551771256
+          modified: 1764551949010
+          isPrivate: false
+          description: ""
+          sortKey: -1764551757936
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Banco de dados
+    meta:
+      id: fld_f65fea2d46e241d8bc77503c14e7d914
+      created: 1764748357259
+      modified: 1764748357259
+      sortKey: -1764748357259
+      description: ""
+    children:
+      - url: http://127.0.0.1:5000/user/create
+        name: Create User
+        meta:
+          id: req_4fe4a016388c46e39a1bf9792b02948f
+          created: 1764748360038
+          modified: 1764754087248
+          isPrivate: false
+          description: ""
+          sortKey: -1764748361956
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "teste insercao",
+            	"email": "emailteste2@2gmail.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:5000/user/update
+        name: Update User
+        meta:
+          id: req_ae7507bf84ce4f6b88c5244edaca66a7
+          created: 1764748527241
+          modified: 1764754300907
+          isPrivate: false
+          description: ""
+          sortKey: -1764748527241
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "teste insercao",
+            	"email": "emailteste@gmail.com",
+            	"id": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:5000/user/retrieve
+        name: Retrieve User
+        meta:
+          id: req_07dd80ee839b4dfbbb0df6118212895f
+          created: 1764748537535
+          modified: 1764756501217
+          isPrivate: false
+          description: ""
+          sortKey: -1764748537535
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"id": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:5000/user/delete
+        name: Delete User
+        meta:
+          id: req_245fb48db8c343f6a87e93b2c2f69776
+          created: 1764748539641
+          modified: 1764755245202
+          isPrivate: false
+          description: ""
+          sortKey: -1764748539641
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"id": 8
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:5000/notes/create
+        name: Create Note
+        meta:
+          id: req_9c08549bfe0c402e82550ec0979905bf
+          created: 1764748541049
+          modified: 1764754326047
+          isPrivate: false
+          description: ""
+          sortKey: -1764748541049
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:5000/notes/update
+        name: Update Note
+        meta:
+          id: req_49131cb3c0774286a25e4676a18e7da3
+          created: 1764748542538
+          modified: 1764754334790
+          isPrivate: false
+          description: ""
+          sortKey: -1764748542538
+        method: POST
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:5000/notes/delete
+        name: Delete Note
+        meta:
+          id: req_5564d2e55947431587fcce5ebb4af5c6
+          created: 1764748578188
+          modified: 1764754345935
+          isPrivate: false
+          description: ""
+          sortKey: -1764748578188
+        method: POST
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://127.0.0.1:5000/notes/retrieve
+        name: Retrieve Notes
+        meta:
+          id: req_1d501b3b156040d8972261a7a37ca06b
+          created: 1764748579549
+          modified: 1764754356410
+          isPrivate: false
+          description: ""
+          sortKey: -1764748579549
+        method: POST
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_97c0be8bf1e64d94718ed2e392de74938e5aceab
+    created: 1764551575195
+    modified: 1764551575195
+environments:
+  name: Base Environment
+  meta:
+    id: env_97c0be8bf1e64d94718ed2e392de74938e5aceab
+    created: 1755730983224
+    modified: 1764551575158
+    isPrivate: false
