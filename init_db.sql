@@ -24,7 +24,7 @@ create table note_type
 (
 	id int not null primary key
 	,tipo varchar(64) not null
-	,definitons json
+	,definitions json
 );
 
 create table notes(
@@ -42,7 +42,7 @@ create table notes(
 
 -- insert pra popular um mockup
 
-insert into note_type(id, tipo, definitons)
+insert into note_type(id, tipo, definitions)
 values
 (1, 'Urgente', '{"color":"yellow", "text":"bold"}'),
 (2, 'Normal', null),
